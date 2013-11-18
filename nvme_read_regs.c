@@ -6,6 +6,8 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
+#include <inttypes.h>
 #include <sys/mman.h>
 #include <unistd.h>
 
@@ -40,14 +42,15 @@ int main(int argc, char **argv)
 		return 1;
 	}
 
-	printf("cap     : %llx\n", (*(unsigned long long *)regs));
-	printf("version : %x\n", (*(unsigned long *)(regs + 0x8)));
-	printf("intms   : %x\n", (*(unsigned long *)(regs + 0xc)));
-	printf("intmc   : %x\n", (*(unsigned long *)(regs + 0x10)));
-	printf("cc      : %x\n", (*(unsigned long *)(regs + 0x14)));
-	printf("aqa     : %x\n", (*(unsigned long *)(regs + 0x24)));
-	printf("asq     : %llx\n", (*(unsigned long long *)(regs + 0x28)));
-	printf("acq     : %llx\n", (*(unsigned long long *)(regs + 0x30)));
+	printf("cap     : %"PRIx64"\n", (*(uint64_t *)regs));
+	printf("version : %x\n", (*(uint32_t *)(regs + 0x8)));
+	printf("intms   : %x\n", (*(uint32_t *)(regs + 0xc)));
+	printf("intmc   : %x\n", (*(uint32_t *)(regs + 0x10)));
+	printf("cc      : %x\n", (*(uint32_t *)(regs + 0x14)));
+	printf("csts    : %x\n", (*(uint32_t *)(regs + 0x18)));
+	printf("aqa     : %x\n", (*(uint32_t *)(regs + 0x24)));
+	printf("asq     : %"PRIx64"\n", (*(uint64_t *)(regs + 0x28)));
+	printf("acq     : %"PRIx64"\n", (*(uint64_t *)(regs + 0x30)));
 
 	return 0;
 }

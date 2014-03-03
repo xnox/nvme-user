@@ -20,9 +20,9 @@ static void show_nvme_id_ctrl(struct nvme_id_ctrl *ctrl)
 	memcpy(mn, ctrl->mn, sizeof(ctrl->mn));
 	memcpy(fr, ctrl->fr, sizeof(ctrl->fr));
 
-	sn[sizeof(ctrl->sn) + 1] = '\0';
-	mn[sizeof(ctrl->mn) + 1] = '\0';
-	fr[sizeof(ctrl->fr) + 1] = '\0';
+	sn[sizeof(ctrl->sn)] = '\0';
+	mn[sizeof(ctrl->mn)] = '\0';
+	fr[sizeof(ctrl->fr)] = '\0';
 
 	printf("\nNVME Identify Controller:\n\n");
 	printf("vid     : %#x\n", ctrl->vid);

@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 	int err, fd, fw_fd, fw_size, xfer_size;
 	struct stat sb;
 	void *fw_buf;
-	int offset;
+	int offset = 0;
 
 	if (argc != 3) {
 		fprintf(stderr, "Usage: %s <device> <fw_image_file>\n", argv[0]);

@@ -39,11 +39,15 @@ int main(int argc, char **argv)
 	err = ioctl(fd, NVME_IOCTL_SUBMIT_IO, &io);
 	if (err < 0)
 		goto perror;
+	if (err)
+		fprintf(stderr, "nvme write status:%x\n", err);
 
 	io.opcode = nvme_cmd_read;
 	err = ioctl(fd, NVME_IOCTL_SUBMIT_IO, &io);
 	if (err < 0)
 		goto perror;
+	if (err)
+		fprintf(stderr, "nvme read status:%x\n", err);
 
 	return 0;
 

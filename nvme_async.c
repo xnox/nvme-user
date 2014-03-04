@@ -5,7 +5,7 @@
 int main(int argc, char **argv)
 {
 	static const char *perrstr;
-	int err, i, max, quit = 0;
+	int err;
 	unsigned int async[4];
 	struct pollfd fds;
 

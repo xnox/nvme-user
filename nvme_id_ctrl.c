@@ -65,7 +65,7 @@ static void show_nvme_id_ctrl(struct nvme_id_ctrl *ctrl)
 int main(int argc, char **argv)
 {
 	static const char *perrstr;
-	int err, fd, done = 0;
+	int err, fd;
 	struct nvme_id_ctrl ctrl;
 
 	if (argc != 2) {

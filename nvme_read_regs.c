@@ -47,7 +47,7 @@ int main(int argc, char **argv)
 	printf("intms   : %x\n", (*(uint32_t *)(regs + 0xc)));
 	printf("intmc   : %x\n", (*(uint32_t *)(regs + 0x10)));
 	printf("cc      : %x\n", (*(uint32_t *)(regs + 0x14)));
-	printf("csts    : %x\n", (*(uint32_t *)(regs + 0x18)));
+	printf("csts    : %x\n", (*(uint32_t *)(regs + 0x1c)));
 	printf("aqa     : %x\n", (*(uint32_t *)(regs + 0x24)));
 	printf("asq     : %"PRIx64"\n", (*(uint64_t *)(regs + 0x28)));
 	printf("acq     : %"PRIx64"\n", (*(uint64_t *)(regs + 0x30)));

@@ -23,6 +23,16 @@ static void show_nvme_id_ns(struct nvme_id_ns *ns, int id)
 	printf("mc      : %#x\n", ns->mc);
 	printf("dpc     : %#x\n", ns->dpc);
 	printf("dps     : %#x\n", ns->dps);
+	printf("_euid64 : %02x%02x%02x%02x%02x%02x%02x%02x\n",
+	       ns->rsvd30[90],
+	       ns->rsvd30[91],
+	       ns->rsvd30[92],
+	       ns->rsvd30[93],
+	       ns->rsvd30[94],
+	       ns->rsvd30[95],
+	       ns->rsvd30[96],
+	       ns->rsvd30[97]
+	    );
 
 	for (i = 0; i <= ns->nlbaf; i++) {
 		printf("lbaf %2d : ms:%-2d ds:%-2d rp:%#x %s\n", i,
